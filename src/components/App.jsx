@@ -1,4 +1,4 @@
-// import style from './phoneStyles';
+import style from './app.module.css';
 
 import { useSelector } from 'react-redux';
 import { getItems } from "redux/contacts/contacts-selectors";
@@ -10,27 +10,18 @@ import Filter from './phone/Filter';
 export const App = () => {
   const contacts = useSelector(getItems);
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-        // background-color: '#213547'
-      }}
-    >
-      <div >
+    <div className={style.container}>
+      <div className={style.leftsection}>
+        <h1>Add contact</h1>
       <ContactForm></ContactForm>
       Contactos: {contacts.length}
       </div>
-      <div>
+      <div className={style.rightsection}>
+        <h2>Contacts</h2>
       <Filter></Filter>
       <ContactList></ContactList>
       </div>
       
-
     </div>
   );
 };

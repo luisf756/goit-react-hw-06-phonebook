@@ -18,12 +18,12 @@ const listItems = contacts.filter(({name}) => name.toLowerCase().includes(filter
       <p className='ptrolio'>
         <b>{name}: </b>
           {' ' + number}
-        <button
+        
+      </p>
+      <button
           type="submit"
           onClick={() => onDeleteContact(id)}
           >delete</button>
-      </p>
-      
       </div>
       
     </li>
